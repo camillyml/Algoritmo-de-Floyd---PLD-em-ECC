@@ -5,13 +5,13 @@ Curva usada em todos os testes: `y² = x³ + 2x + 2 (mod p)`, com `a = b = 2`.
 
 Objetivo: encontrar `x ≠ y` tais que `xG = yG`, para um ponto gerador `G` da
 curva, usando a analogia tartaruga/lebre (busca de ciclos de Floyd), tal como
-usada na fatoração de inteiros (Pollard's rho para fatoração) — aqui aplicada
+usada na fatoração de inteiros (Pollard's rho para fatoração), aqui aplicada
 à estrutura de grupo dos pontos da curva elíptica.
 
 Implementação em `pollard_rho_ec.py`, usando a biblioteca `tinyec` (`ec.Point`,
-`ec.Curve`, `ec.SubGroup`) fornecida no enunciado. O gerador `G` é obtido
+`ec.Curve`, `ec.SubGroup`). O gerador `G` é obtido
 buscando o primeiro `x` cuja equação da curva tem raiz quadrada módulo `p`
-(via Tonelli–Shanks), já que os pontos-base do enunciado não vinham prontos.
+(via Tonelli–Shanks).
 
 ## 1) Método ingênuo 
 
