@@ -1,4 +1,4 @@
-# Algoritmo-de-Floyd PLD em ECC
+# Algoritmo de Floyd PLD em ECC
 # PLD em Curvas Elípticas via ciclo de Floyd (Pollard's rho)
 
 Curva usada em todos os testes: `y² = x³ + 2x + 2 (mod p)`, com `a = b = 2`.
@@ -21,10 +21,10 @@ buscando o primeiro `x` cuja equação da curva tem raiz quadrada módulo `p`
   diferentes (a coincidência trivial em `k=1`, onde ambas valem `2G`, é
   descartada).
 
-**Cuidado de implementação:** o expoente da lebre não pode ser mantido como
+**Observação:** o expoente da lebre não pode ser mantido como
 o inteiro gigante `2^k` a cada iteração (isso faz `y` crescer
-exponencialmente em número de bits e explode o custo); guardamos apenas o
-expoente `k` (inteiro pequeno) e só materializamos `y = 2^k` uma única vez,
+exponencialmente em número de bits e explode o custo); É guardado apenas o
+expoente `k` (inteiro pequeno) e só materializa-se `y = 2^k` uma única vez,
 no final, quando a colisão é encontrada.
 
 **Complexidade:** esse método não é uma busca pseudo-aleatória. A
